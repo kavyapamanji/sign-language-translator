@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SignSpeak - Sign Language Translator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- MediaPipe -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🤟 SignSpeak</div>
+
+        <div class="tagline">
+            Breaking communication barriers
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <h1>
+                Sign Language
+                <span>Translator</span>
+            </h1>
+
+            <p>
+                Communicate naturally using sign language.
+                Show your hand to the camera and convert
+                gestures into text.
+            </p>
+
+        </section>
+
+
+        <section class="translator">
+
+            <!-- CAMERA -->
+
+            <div class="camera-card">
+
+                <div class="card-title">
+                    <h2>📷 Live Camera</h2>
+
+                    <span id="status">
+                        ● Ready
+                    </span>
+                </div>
+
+                <div class="camera-container">
+
+                    <video
+                        class="input_video"
+                        autoplay
+                        playsinline>
+                    </video>
+
+                    <canvas class="output_canvas"></canvas>
+
+                </div>
+
+                <p class="camera-help">
+                    Place your hand clearly inside the camera
+                </p>
+
+            </div>
+
+
+            <!-- RESULT -->
+
+            <div class="result-card">
+
+                <h2>Detected Sign</h2>
+
+                <div id="result">
+                    Waiting for sign...
+                </div>
+
+                <div class="divider"></div>
+
+                <h2>Translated Text</h2>
+
+                <div
+                    id="sentence"
+                    class="sentence">
+                </div>
+
+<div class="demo-signs">
+
+    <p>Demo signs:</p>
+
+    <button onclick="selectSign('HELLO')">✋ HELLO</button>
+    <button onclick="selectSign('THANK YOU')">🙏 THANK YOU</button>
+    <button onclick="selectSign('YES')">👍 YES</button>
+    <button onclick="selectSign('NO')">👎 NO</button>
+    <button onclick="selectSign('HELP')">🆘 HELP</button>
+    <button onclick="selectSign('STOP')">✋ STOP</button>
+
+</div>
+
+<div class="buttons">
+
+    <button
+        onclick="speakText()"
+        class="speak">
+        🔊 Speak
+    </button>
+
+    <button
+        onclick="clearSentence()"
+        class="clear">
+        🗑️ Clear
+    </button>
+
+</div>
+               
+
+            </div>
+
+        </section>
+
+
+        <!-- HOW IT WORKS -->
+
+        <section class="how">
+
+            <h2>How It Works</h2>
+
+            <div class="steps">
+
+                <div class="step">
+                    <div>📷</div>
+                    <h3>Show Your Sign</h3>
+                    <p>
+                        Use your camera to show
+                        a sign-language gesture.
+                    </p>
+                </div>
+
+
+                <div class="step">
+                    <div>🧠</div>
+                    <h3>AI Detection</h3>
+                    <p>
+                        Computer vision detects
+                        your hand landmarks.
+                    </p>
+                </div>
+
+
+                <div class="step">
+                    <div>📝</div>
+                    <h3>Get Text</h3>
+                    <p>
+                        The recognized gesture
+                        is converted into text.
+                    </p>
+                </div>
+
+
+                <div class="step">
+                    <div>🔊</div>
+                    <h3>Speak</h3>
+                    <p>
+                        Convert the translated
+                        text into speech.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURES -->
+
+        <section class="features">
+
+            <h2>Key Features</h2>
+
+            <div class="feature-list">
+
+                <span>✓ Real-time camera</span>
+
+                <span>✓ Hand detection</span>
+
+                <span>✓ Text translation</span>
+
+                <span>✓ Text-to-speech</span>
+
+                <span>✓ Mobile friendly</span>
+
+                <span>✓ Easy to use</span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            SignSpeak © 2026
+        </p>
+
+        <p>
+            Technology for inclusive communication 🤝
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
